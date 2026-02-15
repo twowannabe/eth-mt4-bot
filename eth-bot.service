@@ -1,0 +1,14 @@
+[Unit]
+Description=ETH MT4 Trading Bot
+After=network.target mt4.service
+
+[Service]
+User=root
+WorkingDirectory=/root/repos/eth-mt4-bot
+ExecStart=/root/bots/bin/python3 bot.py
+Restart=always
+RestartSec=5
+Environment=DISPLAY=:99
+
+[Install]
+WantedBy=multi-user.target

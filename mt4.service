@@ -1,0 +1,14 @@
+[Unit]
+Description=MetaTrader 4 via Wine
+After=network.target
+
+[Service]
+User=root
+Environment=DISPLAY=:99
+ExecStartPre=/usr/bin/Xvfb :99 -screen 0 1024x768x16
+ExecStart=/usr/bin/wine "/root/.wine/drive_c/Program Files (x86)/MetaTrader 4/terminal.exe"
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
