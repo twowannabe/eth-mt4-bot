@@ -1,1 +1,1 @@
-pyzmq>=25.0
+# No external dependencies needed — file-based bridge uses only stdlib
